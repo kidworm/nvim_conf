@@ -18,6 +18,14 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
+
+    ["<leader>s"] = {
+      --function () require("resession").load() end,
+      "<cmd>SessionManager! load_session<cr>", desc = "Search sessions"
+    },
+
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
