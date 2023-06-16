@@ -25,6 +25,22 @@ return {
       "<cmd>SessionManager! load_session<cr>", desc = "Search sessions"
     },
 
+    ["<C-l>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer"
+    },
+
+    ["<C-h>"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer",
+    },
+
+    ["<A-h>"] = {
+      function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Move buffer tab left",
+    },
+
+    ["<A-l>"] = {
+      function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end, desc = "Move buffer tab right",
+    },
+
 
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
